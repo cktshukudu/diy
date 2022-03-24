@@ -1,8 +1,241 @@
-{% extends 'diy/beauty.html' %}
-{% block title %}
-DIY
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+
+max-width: 100%;
+margin: auto;
+text-align: center;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+  color: #000000;
+  margin: 0.75%;
+}
+.navigator{
+    background-color:#00b4d8;
+    display: flex;
+}
+.btn {
+    font: inherit;
+    width: 23%;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #00b4d8;
+    color: white;
+    border: 1px solid #00b4d8;
+    padding:1.15%;
+  }
+  .btn:hover {
+    background-color: silver;
+    border-color: #00b4d8;
+  }
+  input{
+    width: 95%;
+    padding: 2%;
+    margin: 1%;
+    }
+    input:focus{
+        background-color:lightblue;
+    
+    }
+    
+
+hr{
+    background-color: red;
+  }
+  .card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  table{
+    width: 100%;
+    table-layout:fixed;
+  }
+  th{
+    background-color: #17c3b2;
+  }
+  .input{
+    margin-bottom: 0.2em;
+  }
+  .hide{
+    display: none;
+  }
+  a{
+    text-decoration: none;
+    padding: 0.2px;
+    margin:0.25%;
+  }
+  .foot{
+    display: none;
+  }
+  
+  @media (min-width:720px){
+    body{
+      width: 80%;
+      margin: auto;
+      background-color: whitesmoke;
+    }
+    .foot{
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin: auto;
+      bottom: 0px;
+      padding: 0.5%;
+      background-color: #caf0f8;
+    }
+    
+  }
+  
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
 
 {% block content %}
-<h1>Main Page</h1>
+
+<body>
+    {% load static %}
+    <div>
+        <div class="navigator">
+
+            <button class="btn homebtn">Home</button>
+            <button class="btn aboutbtn">About Us</button>
+            <button class="btn contactbtn">Contact Us</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="home">
+        <h1 style="text-align: center;">medicCenter</h1>
+       <img src="{% static 'pic/cover.jpg' %}" alt="medic" width="100%">
+       <br>
+        <div class="card">
+            <p>
+                More than A Doctor
+            </p>
+            <p>
+                While we might call just about every medical professional we know a “doctor”, did you know that not all doctors are the same? Often, family physicians will refer a patient to a specialist 
+                – this is not because the doctor does not know what they are doing; it is simply ethical practice when faced with a highly specialised issue. Every medical professional who goes by the title of “Doctor” probably had the same initial medical training but some branched off into specific
+                 studies. Here we take a quick look at six of the most popular types of doctors and what they do:
+            </p>
+            
+        </div>
+        <br>
+        <table>
+            <th> <p>A general practitioner, or GP, is a doctor broadly trained in medicine. GPs are often the first point
+                 of contact with a medical professional for a patient, as these are the 
+                physicians with which one books an appointment when feeling ill or in need of a check-up.</th>
+            </p> 
+            <th>A general practitioner, or GP, is a doctor broadly trained in medicine. GPs are often the first point of contact with a medical professional for a patient, as these are the
+                 physicians with which one books an appointment when feeling ill or in need of a check-up.</th>
+            <th>A general practitioner, or GP, is a doctor broadly trained in medicine. GPs are often the first point of contact with a medical professional for a patient, as these are the
+                 physicians with which one books an appointment when feeling ill or in need of a check-up.</th>
+        </table>
+        
+    </div>
+
+    <br>
+    <div class="card about">
+        <h1><b>about us</b></h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet urna vel felis
+            volutpat
+            pharetra. Vivamus volutpat eget elit nec pellentesque. Nam tristique tortor vitae lectus
+            volutpat,
+            sed pellentesque massa semper. Sed pellentesque leo massa, vitae fermentum ipsum semper
+            quis. Duis
+            nunc velit, eleifend eu sollicitudin ac, gravida quis ex. Aenean nec tristique diam, mattis
+            interdum
+            odio. Nam mattis mauris metus, ut tristique nunc sollicitudin in. Sed a orci eu ipsum
+            viverra dapibus.
+            Praesent id convallis leo. Mauris non porta nibh. Phasellus efficitur aliquet risus nec
+            feugiat.
+            <br>
+            Proin placerat, lorem id rhoncus dapibus, eros urna sagittis ipsum, egestas tristique sem
+            tortor nec mi.
+            Fusce at metus quis eros varius rhoncus. Aliquam vehicula semper sapien, vel varius nibh
+            fermentum nec.
+            In aliquam congue ipsum, at placerat turpis suscipit in. Aenean eget arcu ut nisl gravida
+            congue.
+            Pellentesque vel felis quis elit blandit convallis. Praesent ut tempus dolor. Donec eu dolor
+            in sapien
+            imperdiet accumsan in vel odio. Morbi nulla magna, elementum vitae urna sit amet, pulvinar
+            accumsan
+            magna. Etiam quis vulputate mi.
+            <br>
+            <br>
+            Praesent vitae tortor tincidunt, congue diam nec, fringilla lectus. Suspendisse blandit
+            libero sem, in
+            varius sapien porttitor in. Cras porta accumsan dignissim. Nulla risus mi, maximus eu varius
+            vitae,
+            euismod sed nulla. Maecenas vitae ipsum vitae lectus laoreet fringilla. Praesent sed lacus
+            id urna
+            imperdiet lacinia. Aenean posuere in enim varius posuere. Nulla et metus vel risus porta
+            suscipit
+            vel sit amet leo. Vivamus sit amet nulla nisi. Vestibulum volutpat erat id tellus rhoncus
+            dapibus.
+            Quisque sollicitudin arcu et ligula blandit, vitae molestie mauris vestibulum. Nam
+            venenatis, felis
+            et pellentesque ornare, enim orci sagittis massa, vitae lobortis quam urna sed dui.
+            Phasellus cursus
+            nibh a neque fringilla commodo. Morbi laoreet quam nulla. Quisque vel convallis sem. Nunc
+            finibus ante
+            nulla, vitae lobortis mi luctus vitae.
+            <br>
+            Curabitur vel nisl ac turpis tincidunt aliquet. Curabitur efficitur, odio eget iaculis
+            molestie,
+            ex leo consequat nibh, eu sodales lacus nisi id ante. Ut fermentum iaculis ipsum, consequat
+            vehicula enim
+            pulvinar in. Donec nec odio id felis fermentum molestie in et tortor. Phasellus sed felis
+            vitae nisi
+            consectetur facilisis sed sodales lacus. Mauris sollicitudin nec ex at lobortis.
+            Pellentesque tempor, augue
+            nec interdum posuere, turpis turpis auctor mauris, nec blandit dui orci sed ex. Phasellus
+            accumsan turpis
+            vitae libero vehicula auctor. Nam eget magna volutpat, dictum ante consectetur, pharetra
+            nunc. Ut consequat
+            eleifend est, vel ultrices lacus auctor a. Maecenas dapibus iaculis orci non suscipit.
+            Aliquam at arcu
+            tempor, commodo tellus ac, ullamcorper metus. Nam mattis tincidunt imperdiet.
+        </p>
+    </div>
+    <br>
+    <div class="card contact">
+        <h3>contact Details</h3>
+        <h6>Cnr Kingsway & University Roads</h6>
+        <h6>Auckland Park</h6>
+        <h6>Johannesburg</h6>
+        <h6>Tel:011 559 4555</h6>
+        <h4><b>Send email</b></h4>
+        <form action="/contactUs">
+            <textarea name="emailMessage" id="" cols="30" rows="10"></textarea>
+            <br>
+            <button type="submit">send</button>
+        </form>
+    </div>
+    <hr>
+
+    <div class="foot">
+        <h3>medicCenter</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#"
+                id="contactFooter">Contact us</a>|<a href="#" id="aboutFooter">About Us</a></h6>
+        <h6>© 2022-2022 medicCenter. All rights reserved. Version: 1.0.0</h6>
+        <br>
+    </div>
+</body>
 {% endblock %}
