@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -27,3 +27,8 @@ def ngo(request):
 
 def tourism(request):
     return render(request, "diy/tourism.html", {})
+
+def contact_view(request):
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'diy/contact.html', context)

@@ -1,8 +1,276 @@
-{% extends 'diy/beauty.html' %}
-{% block title %}
-DIY
-{% endblock %}
+{% load static %}
+{% load bootstrap_icons %}
 
-{% block content %}
-<h1>Main Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Services</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <style>
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(250, 250, 250) url(http://lorempixel.com/1920/1080/nature/);
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+#navbar {
+  background: white;
+  color: rgb(13, 26, 38);
+  position: fixed;
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100vw;
+  z-index: 10;
+}
+
+.nav-wrapper {
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+
+.logo {
+  float: left;
+  margin-left: 28px;
+  font-size: 1.5em;
+  height: 60px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+} 
+
+#navbar ul {
+  display: inline-block;
+  list-style: none;
+  /* margin-right: 14px; */
+  margin-top: -2px;
+  text-align: right;
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.5s ease-out;
+}
+#navbar li {
+  display: inline-block;
+}
+
+#navbar li a {
+  color: rgb(13, 26, 38);
+  display: block;
+  font-size: 0.7em;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 0 20px;
+  padding: 0 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+#navbar li a:hover {
+  /* border-bottom: 1px solid rgb(28, 121, 184); */
+  color: rgb(28, 121, 184);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+
+/* Animated Bottom Line */
+#navbar li a:before, #navbar li a:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -1px;
+  background: rgb(13, 26, 38);
+}
+
+#navbar li a:before {
+  left: 0;
+  transition: 0.5s;
+}
+
+#navbar li a:after {
+  background: rgb(13, 26, 38);
+  right: 0;
+  /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+}
+
+#navbar li a:hover:before {
+  background: rgb(13, 26, 38);
+  width: 100%;
+  transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+#navbar li a:hover:after {
+  background: transparent;
+  width: 100%;
+  /* transition: 0s; */
+}
+.banner {
+	background:url("/static/images/male.webp") no-repeat 0% 0% / 100% 100%;
+	color:#000;
+	text-align: center;
+	width: 100%;
+  margin-top: 30px;
+border-radius: 10px;
+border-bottom: 5px solid #84ACCE;
+}
+.banner-overlay {
+
+	padding:220px 0px 170px;
+}
+.banner h1 {
+	color:#84ACCE ;
+}
+.banner p {
+	margin:15px auto 15px;
+	max-width: 670px
+}
+.section-padding {
+	padding: 100px 0px;
+}
+.section-title p {
+	width: 60%;
+	margin: 15px auto 20px;
+}
+.section-title-line {
+	background: #ececec;
+	content: "";
+	height: 1px;
+	position: absolute;
+	left: calc(50% - 87px);
+	width: 175px;
+}
+.service-box {
+  border-top: 2px dotted #84ACCE;
+	padding: 50px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+}
+.service-box .icon i {
+	font-size: 60px;
+	color: #84ACCE;
+}
+.footer-copy {
+	border-top:2px solid #84ACCE;
+	color: #000;
+	font-size: 13px;
+	text-align: center;
+	padding:70px 0px;
+}
+    </style>
+</head>
+<body>
+    {% block content %}
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="#home"><i class="fa fa-angellist"></i>Cleaning and Services</a>
+          </div>
+          <ul id="menu">
+            <li><a href="/diy/cleaning/">Home</a></li>
+           <li><a href="#services_section">Services</a></li>
+         <li><a href="#about_section">About</a></li>
+         <!-- <li><a href="#contact">Contact</a></li> -->
+          </ul>
+        </div>
+      </nav>
+      <div class="banner text-center" data-scroll-index='0'>
+        <div class="banner-overlay">
+          <div class="container">
+        </div>
+      </div>
+      </div>
+      <section id="about_section">
+      <div class="about-us section-padding" data-scroll-index='1'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+           
+              <span class="section-title-line"></span> </div>
+            <div class="col-md-6 mb-50">
+              <div class="section-info">
+                <div class="sub-title-paragraph">
+                  <h4>About Us.</h4>
+                  <p>Nam non erat feugiat, pellentesque mi ut, finibus tellus. Ut eget ex sodales, feugiat elit non, semper ex. Sed laoreet lectus nisl, sit amet porttitor lacus porta nec. Quisque sit amet metus sagittis, tincidunt tellus in, efficitur lorem. Sed scelerisque tellus nisl, eget tincidunt elit aliquet vitae. Integer id felis ut ipsum tristique iaculis. Mauris sed nibh enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sagittis rhoncus sollicitudin. Maecenas eget dui a neque rutrum tincidunt sed non ipsum.</p>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-6 mb-50">
+              <div class="section-img"> <img src="{% static 'images/clean.jpg' %}" alt="" class="img-responsive"/> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section id="services_section">
+      <div class="services section-padding bg-grey" data-scroll-index='2'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+              <h3>Services</h3>
+              <span class="section-title-line"></span> </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-building"></i> </div>
+                <div class="icon-text">
+                  <h4 class="title-box">Offices</h4>
+                  <!-- <p>Sed malesuada, est eget condimentum iaculis, nisi ex facilisis metus.</p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-home"></i></div>
+                <div class="icon-text">
+                  <h4 class="title-box">Homes</h4>
+                  <!-- <p>Sed malesuada, est eget condimentum iaculis, nisi ex facilisis metus.</p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-bed"></i> </div>
+                  <h4 class="title-box">Guesthouses & Bnb's</h4>
+                  <!-- <p>Sed malesuada, est eget condimentum iaculis, nisi ex facilisis metus.</p> -->
+                </div>
+              </div>
+            </div>
+     </div>
+     </div>
+     </section>
+     <footer class="footer-copy">
+     <div class="container-fluid">
+        <div class="row">
+    <div class="col-md-12">
+    <p>2022 &copy; DIY.</a></p>
+     </div>
+</div>
+     </div>
+     </footer>
 {% endblock %}
+</body>
+</html>
+
+
+

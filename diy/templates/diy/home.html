@@ -96,9 +96,7 @@ h6 {
 	background: transparent;
 	z-index: 1030;
 }
-.navbar .active {
-	color: #ffaf53 !important;
-}
+
 .navbar .nav-item {
 	margin: 0 5px;
 	padding: 0;
@@ -231,11 +229,6 @@ h6 {
 	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
 	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
 }
-.service-box .icon i {
-	font-size: 40px;
-	color: #ffaf53;
-}
-
 .icon-text h4 {
 	font-size: 16px;
 	font-weight: 600;
@@ -255,28 +248,7 @@ h6 {
 	transition: all 0.3s ease-in-out;
 	left: calc(50% - 30px);
 }
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-	background: #ab2f52 !important;
-}
-.info-box {
-	position:relative;
-	padding-bottom:30px;
-}
-.info-box .icon {
-	display:inline-block;
-	width: 30px;
-}
-.info-box .icon i {
-	font-size: 20px;
-	color: #ab2f52;
-}
-.info-box .content {
-	display:inline-block;
-	margin-left:10px;
-}
-.info-box .content h4 {
-	font-size: 20px;
-}
+
 .contact-form input, .contact-form textarea {
 	border: none;
 	border-bottom: 1px solid #1c1c1c;
@@ -320,15 +292,15 @@ h6 {
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"> <a class="nav-link" href="" data-scroll-nav="0"> {% bs_icon 'house-fill' color='black' size='1.5em'  %} Home</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="1"> {% bs_icon 'people-fill' color='black' size='1.5em'  %} About</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="3"> {% bs_icon 'briefcase-fill' color='black' size='1.5em'  %} Projects</a> </li>
+              <li class="nav-item"> <a class="nav-link" href="/diy/home/" data-scroll-nav="0"> {% bs_icon 'house-fill' color='black' size='1.5em'  %} Home</a> </li>
+              <li class="nav-item"> <a class="nav-link" href="#about_section" data-scroll-nav="1"> {% bs_icon 'people-fill' color='black' size='1.5em'  %} About</a> </li>
+              <li class="nav-item"> <a class="nav-link" href="#project_section" data-scroll-nav="3"> {% bs_icon 'briefcase-fill' color='black' size='1.5em'  %} Projects</a> </li>
               <li class="nav-item"> <a class="nav-link" href="#" data-scroll-nav="4"> {% bs_icon 'telephone-plus-fill' color='black' size='1.5em'  %} Contact</a> </li>
             </ul>
           </div>
         </div>
       </nav>
-      
+<section id="about_section">   
 <div class="about-us section-padding" data-scroll-index='1'>
   <div class="container">
     <div class="row">
@@ -344,7 +316,7 @@ h6 {
             <p>The goal of implementing digital technology is no longer just to improve internal operations, but to expand internal dimensions, reach customers and external partners, affect services, integrate processes, disrupt markets, and fundamentally change industries, thanks to IT's unique features and accessibility. It's no surprise that the concept of digital transformation has sparked a lot of research interest, particularly among practitioners, but academic achievements have lagged behind, probably because digital transformation frameworks are still maturing. Digital transformation can be defined as a continual process of increasing digital maturity through the application of digital and other technology, as well as organizational practices, in order to establish a digital culture. In the end, this maturity will allow the organization to provide better services, obtain a competitive advantage, and respond to actions in a complicated environment more effectively. Companies that successfully implement digital transformation see higher asset returns and are more lucrative overall (Westerman et al., 2012).
                 </p>
           </div>
-          <a href="#" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </div>
+          <a href="#about_section" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </div>
       </div>
       <div class="col-md-6 mb-50">
         <div class="section-img"> <img src="{% static 'images/smes.jpg' %}" alt="" class="img-responsive"/> </div>
@@ -352,6 +324,8 @@ h6 {
     </div>
   </div>
 </div>
+</section>
+<section id="project_section">
 <div class="services section-padding bg-grey" data-scroll-index='2'>
     <div class="container">
       <div class="row">
@@ -371,16 +345,6 @@ h6 {
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
           <div class="service-box bg-white text-center">
-            <div class="icon"> <i class="fas fa-bullhorn "></i> </div>
-            <div class="icon-text">
-              <h4 class="title-box">{% bs_icon 'brush-fill' color='black' size='1.5em'  %} Beauty & Salon</h4>
-              <p>Want to design an industry-leading Beauty & Salon website?
-                <a href="/diy/beauty/" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
-          <div class="service-box bg-white text-center">
             <div class="icon"> <i class="fas fa-map-marked"></i> </div>
             <div class="icon-text">
               <h4 class="title-box">{% bs_icon 'arrow-through-heart-fill' color='black' size='1.5em'  %} Tourism</h4>
@@ -391,19 +355,9 @@ h6 {
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
           <div class="service-box bg-white text-center">
-            <div class="icon"> <i class="fas fa-bug"></i> </div>
-            <div class="icon-text">
-              <h4 class="title-box">NGO</h4>
-              <p>Want to design an industry-leading NGO website?
-                <a href="/diy/ngo/" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
-          <div class="service-box bg-white text-center">
             <div class="icon"> <i class="fas fa-comments"></i> </div>
             <div class="icon-text">
-              <h4 class="title-box">Medical Service</h4>
+              <h4 class="title-box">{% bs_icon 'file-medical-fill' color='black' size='1.5em'  %} Medical Service</h4>
               <p>Want to design an industry-leading Medical Service website?
                 <a href="/diy/medical/" class="anchor-btn">Learn more <i class="fas fa-arrow-right pd-lt-10"></i></a> </p>
             </div>
@@ -422,6 +376,7 @@ h6 {
       </div>
     </div>
   </div>
+  </section>
   <footer class="footer-copy">
   <div class="container-fluid">
     <div class="row">
