@@ -14,8 +14,6 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
-from .forms import webForm
-from .forms import ImageForm
 from django.core.files.storage import FileSystemStorage
 
 
