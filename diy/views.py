@@ -15,6 +15,8 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
 from .forms import webForm
+from .forms import ImageForm
+from django.core.files.storage import FileSystemStorage
 
 
 # Create your views here.
@@ -96,38 +98,37 @@ def clean(request):
 
 
 def create(request):
-    if request.method == 'POST':
-          form = webForm(request.POST, request.FILES)
-          if form.is_valid():
+    if request.method == 'POST' and request.FILES['upload']:
               about=request.POST.get('about')
-              images=request.FILES.get('images')
+              upload=request.FILES.get('upload')
               activities=request.POST.get('activities')
               explore=request.POST.get('explore')
-              image=request.FILES.get('image')
+              image=request.POST.get('image')
               ply=request.POST.get('ply')
-              imags=request.FILES.get('imags')
+              imags=request.POST.get('imags')
               health=request.POST.get('health')
-              himages=request.FILES.get('himages')
+              himages=request.POST.get('himages')
               adrs1=request.POST.get('adrs1')
               adrs2=request.POST.get('adrs2')
               adrs3=request.POST.get('adrs3')
               cellno=request.POST.get('cellno')
               companyName=request.POST.get('companyName')
-              print(images)
-             
-              content={'about':about,'images':images,'activities':activities,'explore':explore,'image':image,'ply':ply,'imags':imags,'health':health,'himages':himages,'adrs1':adrs1,'adrs2':adrs2,'adrs2':adrs1,'adrs3':adrs1,'cellno':cellno,'companyName':companyName}
+              fss = FileSystemStorage()
+              file = fss.save(upload.name, upload)
+              file_url = fss.url(file)
+          
+              content={'about':about,'upload':upload,'activities':activities,'explore':explore,'image':image,'ply':ply,'imags':imags,'health':health,'himages':himages,'adrs1':adrs1,'adrs2':adrs2,'adrs2':adrs1,'adrs3':adrs1,'cellno':cellno,'companyName':companyName}
               companyName = request.POST.get("companyName")
-              html_content=render_to_string("diy/ed.html",{'content':content}) 
+         
+              html_content=render_to_string("diy/ed.html",{'content':content,'file_url':file_url }) 
               user=webSite.objects.create(htmlString=html_content,companyName=companyName)        
-    else:
-              form = webForm()  
-    return render(request,'diy/view.html',{'body':html_content,'form': form})
+    return render(request,'diy/view.html',{'body':html_content})
 
 def createWebString(request):
    return render(request,'diy/create.html')
 
 def webSites(request,cName):
     html_content=webSite.objects.get(companyName=cName).htmlString
-    print(html_content)
+    # print(html_content)
     return render(request,'diy/view.html',{'container':html_content,'companyName':cName})
- 
+

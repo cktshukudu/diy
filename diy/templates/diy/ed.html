@@ -53,8 +53,12 @@
                           </div>
                         </div>
                         <div class="col-md-6 mb-50">
-                          <div class="section-img"> <img src="{{ content.images.url }}" alt="" class="img-responsive"/> 
-                        </div>
+                          <div class="section-img">   {% if file_url %}
+                            <img src="{{ file_url }}" class="img-fluid">
+                            {% else %}
+                            <p>No picture added.</p>
+                            {% endif %}
+                          </div>
 
                         </div>
                       </div>
@@ -81,8 +85,7 @@
                                     <div class="facility-text">
                                         <h4 class="mb-3">{{content.explore}}</h4>
                                       
-                                        <p class="mb-0"><img class="img-fluid" src="{{content.image.url}}" alt="">
-                                        </p>
+                                        <p class="mb-0">{{content.image}}</p>
                                       
                                     </div>
                                 </div>
@@ -97,7 +100,7 @@
                                     <div class="facility-text ">
                                         <h4 class="mb-3">{{content.ply}}</h4>
                                       
-                                        <p class="mb-0"><img class="img-fluid" src="{{content.imags.url}}" alt=""></p>
+                                        <p class="mb-0">{{content.imags}} </p>
                                        
                                     </div>
                                 </div>
@@ -110,9 +113,9 @@
                                         <span class="bg-warning"></span>
                                     </div>
                                     <div class="facility-text">
-                                        <h4 class="mb-0">{{content.health}}</h4>
+                                        <h4 class="mb-0"> {{content.health}}</h4>
                     
-                                        <p class="mb-0"><img class="img-fluid" src="{{content.himages.url}}" alt=""></p>
+                                        <p class="mb-0"> {{content.himages}}</p>
                                        
                                     </div>
                                 </div>
