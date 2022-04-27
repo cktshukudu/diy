@@ -5,7 +5,12 @@ from django.db import models
 class webSite(models.Model):
     htmlString = models.TextField()
     companyName = models.CharField(max_length=60,default='No name')
-    images = models.ImageField(upload_to='images/')
+
+class webSite2(models.Model):
+    htmlString = models.TextField()
+    companyName = models.CharField(max_length=60,default='No name')
+  
+   
     
 
   

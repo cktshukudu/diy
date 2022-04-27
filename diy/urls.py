@@ -18,6 +18,12 @@ urlpatterns = [
     path('create/webfying/',views.create,name='create html content'),
     path('urls/<str:cName>/',views.webSites,name='show different websites'),
 
+
+    path('make/',views.createWebString2,name='respond with choosen website'),
+    path('make/',views.createWebString2,name='respond with the form'),
+    path('make/webfying/',views.make,name='create html content'),
+    path('url/<str:cName>/',views.webSites2,name='show different websites'),
+
     
  
 ]

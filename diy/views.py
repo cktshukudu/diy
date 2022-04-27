@@ -6,7 +6,7 @@ from cgitb import html
 from django.template.loader import render_to_string
 from django.shortcuts import render,redirect
 from .models import webSite
-# from .models import cleanSite
+from .models import webSite2
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.core.mail import EmailMessage
@@ -127,6 +127,36 @@ def createWebString(request):
 
 def webSites(request,cName):
     html_content=webSite.objects.get(companyName=cName).htmlString
-    # print(html_content)
     return render(request,'diy/view.html',{'container':html_content,'companyName':cName})
+
+def make(request):
+    if request.method == 'POST' and request.FILES['url']:
+              Heading=request.POST.get('Heading')
+              url=request.FILES.get('url')
+              content1=request.POST.get('content1')
+              content2=request.POST.get('content2')
+              content3=request.POST.get('content3')
+              adrs1=request.POST.get('adrs1')
+              adrs2=request.POST.get('adrs2')
+              adrs3=request.POST.get('adrs3')
+              cellno=request.POST.get('cellno')
+              companyName=request.POST.get('companyName')
+              fss = FileSystemStorage()
+              file = fss.save(url.name, url)
+              file_url = fss.url(file)
+          
+              content={'Heading':Heading,'url':url,'content1':content1,'content2':content2,'content3':content3,'adrs1':adrs1,'adrs2':adrs2,'adrs2':adrs1,'adrs3':adrs1,'cellno':cellno,'companyName':companyName}
+              companyName = request.POST.get("companyName")
+         
+              html_content=render_to_string("diy/cl.html",{'content':content,'file_url':file_url }) 
+              user=webSite2.objects.create(htmlString=html_content,companyName=companyName)        
+    return render(request,'diy/view2.html',{'body':html_content})
+
+def createWebString2(request):
+   return render(request,'diy/make.html')
+
+def webSites2(request,cName):
+    html_content=webSite2.objects.get(companyName=cName).htmlString
+    # print(html_content)
+    return render(request,'diy/view2.html',{'container':html_content,'companyName':cName})
 
