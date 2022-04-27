@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap_icons',
     'bootstrap4',
+    "django_static_fontawesome",
     'diy',
     
 ]
@@ -83,10 +84,15 @@ WSGI_APPLICATION = 'diy_websites.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dit',
+        'HOST'     : '127.0.0.1',
+        'PORT'     : '3306',
+        'USER'     : 'root',
+        'PASSWORD' : 'Number@123',
     }
 }
+
 
 
 # Password validation
@@ -124,10 +130,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+SITE_ID= 1
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT=os.path.join(BASE_DIR,"/static/")
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'devtespace@gmail.com'
+EMAIL_HOST_PASSWORD = '3Password@123'
+EMAIL_USE_TLS = True

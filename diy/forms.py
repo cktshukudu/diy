@@ -1,8 +1,9 @@
+from django import forms
+from .models import webSite
 from django.forms import ModelForm
-from .models import Contact
 
 
-class ContactForm(ModelForm):
+class webForm(forms.ModelForm):
     class Meta:
-        model = Contact
-        fields = '__all__'
+        model = webSite
+        fields = ['htmlString', 'companyName', 'images']
