@@ -91,7 +91,7 @@ def createWebString(request):
          companyName=companyName
          )
 
-         return render(request,'diy/medic/view.html',{'body':html_content})
+         return render(request,'diy/completed.html',{'body':html_content,'companyName':companyName})
       return render(request,'diy/medic/create.html')
 
 def webSites(request,cName):

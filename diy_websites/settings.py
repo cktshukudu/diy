@@ -83,13 +83,14 @@ WSGI_APPLICATION = 'diy_websites.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dit',
-        'HOST'     : '127.0.0.1',
-        'PORT'     : '3306',
-        'USER'     : 'root',
-        'PASSWORD' : 'Number@123',
+        'NAME': 'diy',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': '96Regionald@89',
     }
 }
 

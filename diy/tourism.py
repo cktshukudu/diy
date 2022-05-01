@@ -62,6 +62,14 @@ def createWebString(request):
          image2=request.POST.get('image2')
          image3=request.POST.get('image3')
          image4=request.POST.get('image4')
+         price1=request.POST.get('price1')
+         price2=request.POST.get('price2')
+         price3=request.POST.get('price3')
+         price4=request.POST.get('price4')
+         product1=request.POST.get('product1')
+         product2=request.POST.get('product2')
+         product3=request.POST.get('product3')
+         product4=request.POST.get('product4')
          subHead=request.POST.get('subHead')
          content1=request.POST.get('content1')
          content2=request.POST.get('content2') 
@@ -81,6 +89,14 @@ def createWebString(request):
           'image2':image2,
           'image3':image3,
           'image4':image4,
+          'price1':price1,
+          'price2':price2,
+          'price3':price3,
+          'price4':price4,
+          'product1':product1,
+          'product2':product2,
+          'product3':product3,
+          'product4':product4,
           'subHead':subHead,
           'content1':content1,
           'content2':content2,
@@ -101,7 +117,7 @@ def createWebString(request):
          companyName=companyName
          )
 
-         return render(request,'diy/medic/view.html',{'body':html_content})
+         return render(request,'diy/completed.html',{'body':html_content,'companyName':companyName})
       return render(request,'diy/tourism/create.html')
 
 def webSites(request,cName):
