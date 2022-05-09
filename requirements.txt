@@ -1,0 +1,11 @@
+pip install pillow
+pip install django-bootstrap4
+pip install django-bootstrap-icons
+pip install font-awesome
+
+
+ To use website:
+ http://127.0.0.1:8000/diy/home/
+
+
+

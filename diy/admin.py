@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import webSite2
+from .models import webSite3
 
 
 # Register your models here.
 
-admin.site.register(webSite2)
+admin.site.register(webSite3)

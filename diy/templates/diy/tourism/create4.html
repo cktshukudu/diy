@@ -17,43 +17,36 @@
         <div class="card">
             <h1 style="text-align: center;">Your Dream Destination</h1>
             <br>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+           <input type="text" placeholder="Heading" class="input" name="heading" required>
+           <input type="text" placeholder="company name" class="input" name="companyName" required>
             <div class="slideshow-container">
                 <div class="mySlide fade">
-                    <div class="numbertext">
-                        1/4
-                    </div>
                     <img src="{% static 'pic/edu.jpg' %}" alt="education" style="width: 100%;
             height: 500px;">
                     <div class="text">Tourism</div>
                 </div>
 
                 <div class="mySlide fade">
-                    <div class="numbertext">
-                        2/4
-                    </div>
                     <img src="{% static 'pic/Logistics.jpg' %}" alt="Logistics" style="width: 100%;height: 500px;">
                     <div class="text">Tourism</div>
                 </div>
 
 
                 <div class="mySlide fade">
-                    <div class="numbertext">
-                        3/4
-                    </div>
                     <img src="{% static 'pic/market.jpg' %}" alt="Marketing" style="width: 100%;height: 500px;">
                     <div class="text">Tourism</div>
                 </div>
 
                 <div class="mySlide fade">
-                    <div class="numbertext">
-                        4/4
-                    </div>
                     <img src="{% static 'pic/tourism.jpg' %}" alt="Tourism" style="width: 100%;height: 500px;">
                     <div class="text">Tourism</div>
                 </div>
 
 
             </div>
+            
             <br>
             <div style="text-align: center;">
                 <span class="dots"> </span>
@@ -61,13 +54,18 @@
                 <span class="dots"> </span>
                 <span class="dots"> </span>
             </div>
+            <input type="file" name="image1" accept="image/*">
+            <hr>
+            <input type="file" name="image2" accept="image/*">
+            <hr>
+            <input type="file" name="image3" accept="image/*">
+            <hr>
+            <input type="file" name="image4" accept="image/*">
         </div>
+        
         <br>
         <div class="card">
-            <p> RegiLorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempore aspernatur suscipit distinctio
-                odio natus consectetur veniam
-                deleniti enim quia. Et consectetur adipisci optio incidunt fuga accusamus molestiae sunt voluptatum.</p>
-                <p>click the black circle for more destinations</p>
+            <p>Press the Dot to view more</p>
             <div class="slideshow-container">
                 <div class="mySlide3 fade">
                     <h3 >V&A water Front</h3>
@@ -115,6 +113,12 @@
                 <span class="dot3" onclick="currentSlide3(2)"> </span>
                 <span class="dot3" onclick="currentSlide3(3)"> </span>
             </div>
+            <input type="text" name="header1" placeholder="First header" required>
+            <input type="text" name="content1" placeholder="Content 1" required>
+            <input type="text" name="header2" placeholder="Second header" required>
+            <input type="text" name="content2" placeholder="Content 2" required>
+            <input type="text" name="header3" placeholder="Third header" required>
+            <input type="text" name="content3" placeholder="Content 3" required>
         </div>
     </div>
     <br>
@@ -159,20 +163,23 @@
             eleifend est, vel ultrices lacus auctor a. Maecenas dapibus iaculis orci non suscipit. Aliquam at arcu
             tempor, commodo tellus ac, ullamcorper metus. Nam mattis tincidunt imperdiet.
         </p>
+        <textarea name="aboutUs" id="aboutUs" cols="30" rows="10" required></textarea>
     </div>
     <br>
     <div class="card contact">
         <h3>contact Details</h3>
         <h6>Cnr Kingsway & University Roads</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs1" required>
         <h6>Auckland Park</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs2" required>
         <h6>Johannesburg</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs3" required>
         <h6>Tel:011 559 4555</h6>
+        <input type="number" placeholder="ADDRESS" class="input" name="celNo" required>
         <h4><b>Send email</b></h4>
-        <form action="/contactUs">
-            <textarea name="emailMessage" id="" cols="30" rows="10"></textarea>
-            <br>
-            <button type="submit">send</button>
-        </form>
+        <input type="email" placeholder="ADDRESS" class="input" name="email" required>
+        <input type="submit">
+    </form>
     </div>
     <hr>
 
